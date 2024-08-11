@@ -1,0 +1,45 @@
+.profile {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 50%;
+
+  &__birth,
+  &__name {
+    position: relative;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 22px;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+
+  &__birth:hover,
+  &__name:hover {
+    background-color: #e0e0e0;
+  }
+
+  &__birth::before,
+  &__name::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+  }
+
+  &__name {
+    background-color: #d1ecf1;
+    font-weight: bold;
+  }
+
+  &__birth {
+    background-color: #d4edda;
+  }
+}
