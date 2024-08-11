@@ -10,7 +10,7 @@ const userInfo = {
 }
 const element = (
   <Comment
-    user={userInfo}
+    author={userInfo}
     text="Good job!"
     date={new Date(0, 1, 1,)}
   />
