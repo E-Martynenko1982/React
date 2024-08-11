@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Search } from './search';
+import { Search } from './Search.jsx';
 import './index.scss';
 
 const rootElement = document.querySelector('#root');
