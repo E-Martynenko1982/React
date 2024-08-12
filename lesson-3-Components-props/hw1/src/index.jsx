@@ -22,12 +22,15 @@ const calculateAge = (birthDate) => {
 
   return age;
 };
+const userData = {
+  firstName: 'John',
+  lastName: "Doe",
+  birthDate: calculateAge(new Date(2007, 7, 11))
+}
 
 const element = (
   <Greeting
-    firstName='John'
-    lastName="Doe"
-    birthDate={calculateAge(new Date(2007, 7, 11))}
+    userData={userData}
   />
 )
 
