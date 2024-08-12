@@ -18,11 +18,11 @@ const calculateAge = (birthDate) => {
 
   return age;
 };
-const Greeting = ({ userData }) => {
+const Greeting = ({ firstName, lastName, birthDate }) => {
   return (
     <div className="greeting">
-      {`My name is ${userData.firstName} ${userData.lastName}. 
-      I am ${calculateAge(userData.birthDate)} years old`}
+      {`My name is ${firstName} ${lastName}. 
+      I am ${calculateAge(birthDate)} years old`}
     </div>
   )
 
