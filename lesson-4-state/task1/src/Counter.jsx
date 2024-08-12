@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './counter.scss';
 
-let counter = 0;
+
 
 
 class Counter extends Component {
