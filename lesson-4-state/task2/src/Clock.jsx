@@ -19,19 +19,16 @@ class Clock extends Component {
   getTimeWithOffset(offset) {
 
     const now = new Date();
-
-
     const utcHours = now.getUTCHours();
-
-
     const hoursWithOffset = utcHours + offset;
-
-
     const offsetTime = new Date(now);
     offsetTime.setUTCHours(hoursWithOffset);
-
-
-    const formattedTime = offsetTime.toISOString().substring(11, 19);
+    const formattedTime = offsetTime.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    });
 
     return formattedTime;
   }
