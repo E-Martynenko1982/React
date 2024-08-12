@@ -5,10 +5,10 @@ import './counter.scss';
 
 
 class Counter extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      counter: 0
+      counter: props.start
     }
 
     setInterval(() => {
@@ -16,7 +16,7 @@ class Counter extends Component {
         counter: this.state.counter + 1
       });
 
-    }, 1000);
+    }, props.interval);
   }
   render() {
     return (
