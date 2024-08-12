@@ -21,8 +21,7 @@ const calculateAge = (birthDate) => {
 const Greeting = ({ firstName, lastName, birthDate }) => {
   return (
     <div className="greeting">
-      {`My name is ${firstName} ${lastName}. 
-      I am ${calculateAge(birthDate)} years old`}
+      {`My name is ${firstName} ${lastName}. I am ${calculateAge(birthDate)} years old`}
     </div>
   )
 
