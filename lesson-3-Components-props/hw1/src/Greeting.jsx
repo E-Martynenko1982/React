@@ -1,9 +1,11 @@
 import React from "react";
 
-const Greeting = (props) => {
+const Greeting = ({ userData }) => {
+
+
   return (
     <div className="greeting">
-      {`My name is ${props.userData.firstName} ${props.userData.lastName}. I am ${props.userData.birthDate} years old`}
+      {`My name is ${userData.firstName} ${userData.lastName}. I am ${userData.birthDate} years old`}
     </div>
   )
 
