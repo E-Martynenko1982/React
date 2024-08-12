@@ -5,6 +5,8 @@ import './profile.scss';
 const formattedDate = date => moment(date).format('DD MMM YY');
 
 const Profile = (props) => {
+  console.log(props)
+
   return (
     <>
       <ul className="profile">

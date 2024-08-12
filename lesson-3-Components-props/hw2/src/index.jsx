@@ -13,10 +13,7 @@ const userData = {
 
 const element = (
   <Profile
-    name={userData.firstName}
-    lastName={userData.lastName}
-    birthDate={userData.birthDate}
-    birthPlace={userData.birthPlace}
+    userData={userData}
   />
 )
 
