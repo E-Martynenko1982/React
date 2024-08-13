@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.jsx";
+import GoodButton from "./GoodButton";
 import './index.scss'
 
 const rootElement = document.querySelector('#root')
 
+const element = (
 
+  <GoodButton />
+)
 
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(element, rootElement)
