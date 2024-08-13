@@ -5,9 +5,6 @@ import './index.scss'
 
 const rootElement = document.querySelector('#root')
 
-const element = (
 
-  <GoodButton />
-)
 
-ReactDOM.render(element, rootElement)
+ReactDOM.render(<GoodButton />, rootElement)
