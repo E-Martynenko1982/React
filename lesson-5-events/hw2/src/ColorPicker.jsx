@@ -34,17 +34,17 @@ class ColorPicker extends React.Component {
     return (
 
       <div>
-        <div class="picker__title">{this.state.title}</div>
+        <div className="picker__title">{this.state.title}</div>
         <div>
-          <button class="picker__button picker__button_coral"
+          <button className="picker__button picker__button_coral"
             onMouseEnter={this.handleMouseCoral}
             onMouseLeave={this.handleMouseLeave}
           ></button>
-          <button class="picker__button picker__button_aqua"
+          <button className="picker__button picker__button_aqua"
             onMouseEnter={this.handleMouseAqua}
             onMouseLeave={this.handleMouseLeave}
           ></button>
-          <button class="picker__button picker__button_bisque"
+          <button className="picker__button picker__button_bisque"
             onMouseEnter={this.handleMouseBisque}
             onMouseLeave={this.handleMouseLeave}
           ></button>
