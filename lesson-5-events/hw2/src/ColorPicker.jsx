@@ -15,7 +15,7 @@ class ColorPicker extends React.Component {
 
   handleMouseAqua = () => {
     this.setState({
-      title: 'Auqa'
+      title: 'Aqua'
     })
   }
 
