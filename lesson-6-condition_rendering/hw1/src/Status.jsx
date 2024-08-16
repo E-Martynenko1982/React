@@ -5,7 +5,7 @@ class Status extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOffline: true,
+      isOnline: true,
     }
   }
   render() {
