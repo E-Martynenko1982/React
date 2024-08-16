@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Mailbox from "./Mailbox";
+import Status from "./Status";
 import './index.scss'
 
 
@@ -8,4 +8,4 @@ const rootElement = document.querySelector('#root')
 
 
 
-ReactDOM.render(<Mailbox unreadMessages={[]} />, rootElement)
+ReactDOM.render(<Status />, rootElement)

@@ -13,20 +13,23 @@ body {
   align-items: center;
 }
 
-.mailbox {
-  &__text {
-    text-transform: uppercase;
+.status {
+  border: 2px solid #000;
+  height: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  &__btn {
+    height: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 8px;
   }
 
-  &__count {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 32px;
-    color: #fff;
-    background-color: #000;
-    margin-left: 16px;
+  &__text {
+    padding: 0 8px;
+    line-height: 28px;
   }
 }
