@@ -8,4 +8,4 @@ const rootElement = document.querySelector('#root')
 
 
 
-ReactDOM.render(<Status />, rootElement)
+ReactDOM.render(<Status isOnline={false} />, rootElement)
