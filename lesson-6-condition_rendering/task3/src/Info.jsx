@@ -1,12 +1,12 @@
 import React from "react";
 
-const Info = ({ text }) => {
-  if (!text) {
+const Info = ({ info }) => {
+  if (!info) {
     return null;
   }
   return (
     <div className="message">
-      {text}
+      {info}
     </div>
   )
 }
