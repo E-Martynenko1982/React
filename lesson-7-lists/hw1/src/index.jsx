@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TransactionsList from "./TransactionList";
+import TransactionsList from "./TransactionsList";
 import './index.scss'
 
 
