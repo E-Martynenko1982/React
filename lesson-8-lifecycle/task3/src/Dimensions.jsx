@@ -1,33 +1,34 @@
 import React from "react";
 
 class Dimensions extends React.Component {
-  constructor(props) {
-    super(props);
-    const { innerWidth, innerHeight } = window
-    this.state = {
-      width: innerWidth,
-      height: innerHeight,
-    }
-  }
+  state = {
+    width: null,
+    height: null,
+  };
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
+    window.addEventListener('resize', this.handleResize);
+
+
+    const { innerWidth, innerHeight } = window
+    this.setDimensions(innerWidth, innerHeight);
   }
 
   handleResize = (e) => {
-    const { innerWidth, innerHeight } = e.target
+    const { innerWidth, innerHeight } = e.target;
+    this.setDimensions(innerWidth, innerHeight);
+  }
+
+  setDimensions = (width, height) => {
     this.setState({
-      width: innerWidth,
-      height: innerHeight,
-    })
+      width,
+      height,
+    });
+    document.title = `${innerWidth} - ${innerHeight}`
   }
-
-  componentDidUpdate() {
-    document.title = `${this.state.width}px - ${this.state.height}px`;
-  }
-
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('resize', this.handleResize);
+
   }
   render() {
     return (
