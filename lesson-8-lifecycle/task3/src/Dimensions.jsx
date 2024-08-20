@@ -10,8 +10,15 @@ class Dimensions extends React.Component {
     window.addEventListener('resize', this.handleResize);
 
 
-    const { innerWidth, innerHeight } = window
+    const { innerWidth, innerHeight } = window;
     this.setDimensions(innerWidth, innerHeight);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    if (prevState.width !== this.state.width || prevState.height !== this.state.height) {
+      document.title = `${this.state.width}px - ${this.state.height}px`;
+    }
   }
 
   handleResize = (e) => {
@@ -24,17 +31,17 @@ class Dimensions extends React.Component {
       width,
       height,
     });
-    document.title = `${innerWidth}px - ${innerHeight}px`
   }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
-
   }
+
   render() {
     return (
       <div className="dimensions">{`${this.state.width}px - ${this.state.height}px`}</div>
-
-    )
+    );
   }
 }
+
 export default Dimensions;
