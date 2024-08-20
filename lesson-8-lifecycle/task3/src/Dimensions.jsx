@@ -24,7 +24,7 @@ class Dimensions extends React.Component {
       width,
       height,
     });
-    document.title = `${innerWidth} - ${innerHeight}`
+    document.title = `${innerWidth}px - ${innerHeight}px`
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
