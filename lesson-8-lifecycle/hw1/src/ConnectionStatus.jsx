@@ -3,34 +3,40 @@ import React from "react";
 class ConnectionStatus extends React.Component {
   constructor(props) {
     super(props);
+    // Встановлюємо початковий стан як online
     this.state = {
-      isOnline: true
-    }
+      isOnline: true,
+    };
   }
 
   componentDidMount() {
-    //підписуємось на події зміни статусу зєднання
-    window.addEventListener('online', this.updateStatus);
-    window.addEventListener('offline', this.updateStatus);
-    // встановлюємо поточний стан зєднання
-    this.setState({ isOnline: navigator.onLine });
-  }
-  componentWillUnmount() {
-    //відписуємось на події зміни статусу зєднання
-    window.removeEventListener('online', this.updateStatus);
-    window.removeEventListener('offline', this.updateStatus);
+    // Підписуємось на події зміни статусу з'єднання
+    window.addEventListener('online', this.handleOnline);
+    window.addEventListener('offline', this.handleOffline);
   }
 
-  updateStatus = () => {
-    this.setState({ isOnline: navigator.onLine })
+  componentWillUnmount() {
+    // Відмовляємось від подій при видаленні компонента
+    window.removeEventListener('online', this.handleOnline);
+    window.removeEventListener('offline', this.handleOffline);
   }
+
+  handleOnline = () => {
+    this.setState({ isOnline: true });
+  };
+
+  handleOffline = () => {
+    this.setState({ isOnline: false });
+  };
+
   render() {
     const { isOnline } = this.state;
     return (
       <div className={`status ${isOnline ? '' : 'status_offline'}`}>
         {isOnline ? 'online' : 'offline'}
       </div>
-    )
+    );
   }
-};
+}
+
 export default ConnectionStatus;
