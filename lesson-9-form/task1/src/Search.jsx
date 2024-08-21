@@ -14,7 +14,7 @@ class Search extends React.Component {
 
   sendValue = () => {
 
-    alert(`Search text: ${this.state.value}`)
+    return alert(`Search text: ${this.state.value}`)
   }
   render() {
 
