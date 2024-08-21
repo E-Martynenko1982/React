@@ -24,7 +24,7 @@ class Search extends React.Component {
     return (
       <form className="search" onSubmit={this.sendValue}>
         <input type="text" className="search__input" onChange={this.handleChange} value={this.state.value} />
-        <button className="search__button">Search</button>
+        <button type="submit" className="search__button">Search</button>
       </form>
     )
   }
