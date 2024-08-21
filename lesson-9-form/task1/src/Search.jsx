@@ -12,18 +12,19 @@ class Search extends React.Component {
     })
   }
 
-  sendValue = () => {
-
+  sendValue = (e) => {
+    e.preventDefault();
     return alert(`Search text: ${this.state.value}`)
   }
   render() {
 
 
 
+
     return (
-      <form className="search">
+      <form className="search" onSubmit={this.sendValue}>
         <input type="text" className="search__input" onChange={this.handleChange} value={this.state.value} />
-        <button className="search__button" onClick={this.sendValue}>Search</button>
+        <button className="search__button">Search</button>
       </form>
     )
   }
