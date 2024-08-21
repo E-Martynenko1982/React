@@ -11,6 +11,7 @@ class UsersList extends React.Component {
 
   getFilteredUsers() {
     const { users } = this.props;
+    // Перевірка на undefined: Ми додали перевірку if (!users || users.length === 0) у методі getFilteredUsers, щоб переконатися, що users існує і є масивом, перш ніж ми застосуємо до нього метод filter.
     if (!users || users.length === 0) {
       return [];
     }
