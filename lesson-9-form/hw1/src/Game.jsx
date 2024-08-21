@@ -3,37 +3,65 @@ import { calculateWinner } from './Helper';
 import Board from './Board';
 
 const Game = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-  const winner = calculateWinner(board);
+
+  const currentBoard = history[stepNumber];
+  const winner = calculateWinner(currentBoard);
 
   const handleClick = (index) => {
-    const boardCopy = [...board]
-    //визначити чи був клік по ячейці чи гра закінчена
-    if (winner || boardCopy[index]) return
-    // визначити чий хід
-    boardCopy[index] = xIsNext ? 'X' : '0'
-    //обновить
-    setBoard(boardCopy);
+    const historyUpToNow = history.slice(0, stepNumber + 1);
+    const currentBoard = historyUpToNow[stepNumber];
+    const boardCopy = [...currentBoard];
+
+    // Проверка: был ли клик по ячейке или игра завершена
+    if (winner || boardCopy[index]) return;
+
+    // Определение текущего хода
+    boardCopy[index] = xIsNext ? 'X' : 'O';
+
+    // Обновление состояния
+    setHistory([...historyUpToNow, boardCopy]);
+    setStepNumber(historyUpToNow.length);
     setXIsNext(!xIsNext);
-  }
+  };
+
+  const jumpTo = (step) => {
+    setStepNumber(step);
+    setXIsNext(step % 2 === 0);
+  };
 
   const startNewGame = () => {
+    setHistory([Array(9).fill(null)]);
+    setStepNumber(0);
+    setXIsNext(true);
+  };
+
+  const moves = history.map((_, move) => {
+    const desc = move ? `Go to move #${move}` : 'Go to game start';
     return (
-      <button className='start__btn' onClick={() => setBoard(Array(9).fill(null))}>Очистити поле</button>
-    )
-  }
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{desc}</button>
+      </li>
+    );
+  });
+
   return (
     <div className='wrapper'>
-      {startNewGame()}
-      <Board squares={board} click={handleClick} />
+      <button className='start__btn' onClick={startNewGame}>Очистити поле</button>
+      <Board squares={currentBoard} click={handleClick} />
       <p className='game__info'>
-        {winner ? 'Winner' + winner : 'Now is...' + (xIsNext ? 'X' : '0 ')}
+        {winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`}
       </p>
-    </div >
+      <div className='game__history'>
+        <ul>{moves}</ul>
+      </div>
+    </div>
   );
 }
 
 export default Game;
+
 
 
