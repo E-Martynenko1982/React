@@ -2,10 +2,10 @@ import React from 'react';
 import Game from './components/Game.jsx'
 import './App.css';
 
-function App() {
+function index() {
   return (
     <Game />
   );
 }
 
-export default App;
+export default index;
