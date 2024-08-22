@@ -17,19 +17,18 @@ class ShoppingCart extends React.Component {
         price: 799
       },
     ]
-  }
+  };
+
   render() {
     const count = this.state.cartItems.length;
     return (
       <div className="column">
+
         <CartTitle userName={this.props.userData.firstName} count={count} />
         <ProductsList cartItems={this.state.cartItems} />
       </div>
-
-    )
+    );
   }
+}
 
-
-
-};
 export default ShoppingCart;

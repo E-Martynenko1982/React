@@ -1,11 +1,10 @@
 import React from "react";
-import './ProductsList.scss';
 
 class ProductsList extends React.Component {
   render() {
     const total = this.props.cartItems.reduce(
       (acc, item) => acc + item.price,
-      0,
+      0
     );
     return (
       <div className="products">
@@ -19,7 +18,8 @@ class ProductsList extends React.Component {
         </ul>
         <div className="products__total">{`Total: $${total}`}</div>
       </div>
-    )
+    );
   }
-};
+}
+
 export default ProductsList;
