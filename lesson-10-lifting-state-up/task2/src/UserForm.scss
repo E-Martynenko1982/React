@@ -1,0 +1,12 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    margin: 8px;
+    width: 150px;
+    padding: 8px;
+  }
+}
