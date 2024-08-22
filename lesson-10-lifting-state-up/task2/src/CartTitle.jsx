@@ -1,5 +1,5 @@
 import React from "react";
-
+import './CartTitle.scss';
 const CartTitle = ({ userName, count }) => {
   return (
     <div className="cart-title">

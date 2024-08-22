@@ -1,5 +1,5 @@
 import React from "react";
-
+import './ProductsList.scss';
 class ProductsList extends React.Component {
   render() {
     const total = this.props.cartItems.reduce(
