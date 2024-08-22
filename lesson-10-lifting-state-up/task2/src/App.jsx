@@ -7,7 +7,7 @@ class Page extends React.Component {
   state = {
     userData: {
       firstName: 'John',
-      lastName: 'Form'
+      lastName: 'Doe'
     }
   }
   handleChange = event => {
