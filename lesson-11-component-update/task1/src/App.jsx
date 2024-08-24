@@ -8,25 +8,12 @@ class App extends React.Component {
 
   }
 
-  componentDidMount() {
-    this.intervalId = setInterval(() => {
-      this.setState({
-        number: this.state.number + 1
-      })
-    }, 1000)
-  }
 
-  componentWillUnmount() {
-
-    clearInterval(this.intervalId)
-
-  }
   render() {
     return (
       <div className="app">
-        <Numbers title='All numbers' number={this.state.number} />
-        <EvenNumbers title='Even numbers' number={this.state.number} />
-        <OddNumbers title='Odd numbers' number={this.state.number} />
+        <Numbers number='17' />
+
       </div>
     )
   }
