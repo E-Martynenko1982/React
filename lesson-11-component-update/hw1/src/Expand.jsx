@@ -7,7 +7,7 @@ const Expand = ({ title, children, isOpen, onToggle }) => {
   return (
     <div className="expand border">
       <div className="expand__header">
-        {isOpen && <span className="expand__title">{title}</span>}
+        <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onToggle}>
           <i className={`fas ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
         </button>
