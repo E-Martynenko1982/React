@@ -32,11 +32,7 @@ class TasksList extends Component {
   handleTaskStatusChange = (id) => {
     const task = this.state.tasks.find(task => Number(task.id) === id);
 
-    if (!task) {
-      console.error(`Задача с id ${id} не найдена.`);
-      return;
-    }
-    // якщо задача знайдена - виконуємо деструктуризацію
+
     const { done, text } = task;
     const updatedTask = {
       text,
