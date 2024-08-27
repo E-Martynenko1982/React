@@ -1,9 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Task = ({ id, done, text = '', onChange, onDelete }) => {
-  const listItemClasses = classNames('list-item', { 'list-item_done': done })
+  //const listItemClasses = classNames('list-item', { 'list-item_done': done })
 
   return (
 
