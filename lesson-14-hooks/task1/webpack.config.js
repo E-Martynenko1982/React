@@ -6,12 +6,10 @@ const webpack = require('webpack');
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const config = {
-    mode: isProduction ? 'production' : 'development',
     entry: './src/index.jsx',
     output: {
       filename: 'bundle.js',
     },
-    devtool: isProduction ? 'source-map' : 'eval-source-map',
     module: {
       rules: [
         {
@@ -37,7 +35,6 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
-
       }),
     ],
     devServer: {
