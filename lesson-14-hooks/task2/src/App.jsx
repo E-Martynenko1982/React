@@ -15,10 +15,9 @@ const App = () => {
               <Link to="/users/facebook">Facebook</Link>
             </li>
           </ul>
+
           <Routes>
-
             <Route path="/users/:USER_ID" element={<User />} />
-
             <Route path="/" element={<span>Select a user please</span>} />
           </Routes>
         </div>
