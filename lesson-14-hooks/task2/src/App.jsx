@@ -1,6 +1,5 @@
-import React from "react";
 import User from "./User";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
   return (
@@ -16,16 +15,16 @@ const App = () => {
               <Link to="/users/facebook">Facebook</Link>
             </li>
           </ul>
-          <Switch>
-            <Route path="users/:userId" Component={User} />
-            <Route path="/">
-              <span>Select a user please</span>
-            </Route>
-          </Switch>
+          <Routes>
+
+            <Route path="/users/:USER_ID" element={<User />} />
+
+            <Route path="/" element={<span>Select a user please</span>} />
+          </Routes>
         </div>
       </Router>
-
     </div>
-  )
+  );
 };
+
 export default App;
